@@ -1,0 +1,20 @@
+{
+  "name": "the-squirrel-marketplace",
+  "owner": {
+    "name": "insidewhy"
+  },
+  "plugins": [
+    {
+      "name": "the-squirrel",
+      "source": "./",
+      "description": "Implements Jira tickets end-to-end: generates specifications, writes code, tests, reviews with parallel agents, and reports results",
+      "strict": false,
+      "keywords": ["jira", "implementation", "specification", "code-review", "testing"],
+      "skills": ["./skills/the-squirrel"]
+    }
+  ],
+  "metadata": {
+    "description": "Marketplace for The Squirrel skill",
+    "version": "1.0.5"
+  }
+}
