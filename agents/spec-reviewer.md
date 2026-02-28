@@ -2,7 +2,7 @@
 name: spec-reviewer
 description: Reviews implementation against the generated specification, checking for gaps, missing requirements, and deviations from the intended behaviour
 tools: Glob, Grep, LS, Read
-model: sonnet
+model: opus
 color: blue
 ---
 

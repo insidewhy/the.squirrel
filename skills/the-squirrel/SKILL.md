@@ -88,11 +88,12 @@ If there are test failures or linter/formatter issues, go back to step 4 to fix 
 
 ## Step 6: Review via Parallel Agents
 
-Spawn three review agents in parallel:
+Spawn four review agents in parallel:
 
 1. **spec-reviewer**: Compare the implementation against the specification. Look for gaps, missing requirements, and deviations.
 2. **code-quality-reviewer**: Check for dead code, coding guideline violations, unnecessary complexity, and style issues.
 3. **general-reviewer**: Review for bugs, logic errors, security vulnerabilities, edge cases, and error handling.
+4. **test-reviewer**: Verify that tests cover all specification requirements and implementation edge cases, and that assertions actually validate expected values rather than being superficial.
 
 Provide each agent with:
 - The path to the specification file.
