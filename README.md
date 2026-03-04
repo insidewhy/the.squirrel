@@ -20,6 +20,12 @@ Or with custom instructions:
 /the-squirrel PJ-123 Do not bother me at all, implement everything by yourself
 ```
 
+If no ticket ID is provided, it is inferred from the current git branch (e.g. `fix/PJ-1234` → `PJ-1234`):
+
+```
+/the-squirrel
+```
+
 When no trailing instructions are provided, the configured default is used (see below).
 
 ## Configuration

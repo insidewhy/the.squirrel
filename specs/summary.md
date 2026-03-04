@@ -8,7 +8,13 @@ It will be invoked like this:
 /the-squirrel PJ-123 Stop to ask me questions about the improved specification, then ask me any non-obvious questions throughout the process
 ```
 
-The first word would be the ID of a Jira ticket and the rest of the text are instructions I will call "the trailing instructions" throughout the rest of this document. If no trailing instructions are provided, the `defaultTrailingInstructions` from the configuration is used (see below).
+Or with no ticket ID (inferred from the current git branch):
+
+```
+/the-squirrel
+```
+
+The first word, if it looks like a Jira ticket ID (e.g. `PJ-123`), is used as the ticket ID and the rest of the text are instructions I will call "the trailing instructions" throughout the rest of this document. If no ticket ID is provided (or the first word doesn't look like a ticket ID), the skill infers it from the current git branch name — for example `fix/PJ-1234` yields `PJ-1234`, and a branch named `PJ-1234` is used as-is. If no ticket ID can be determined, the skill asks the user. If no trailing instructions are provided, the `defaultTrailingInstructions` from the configuration is used (see below).
 
 ## Configuration
 

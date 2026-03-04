@@ -1,6 +1,6 @@
 ---
 name: the-squirrel
-description: "Implement a Jira work item end-to-end — specification, code, tests, and review. Usage: /the-squirrel <TICKET-ID> [trailing instructions]"
+description: "Implement a Jira work item end-to-end — specification, code, tests, and review. Usage: /the-squirrel [TICKET-ID] [trailing instructions]. If no ticket ID is provided, it is inferred from the current git branch."
 ---
 
 # Implement Work Item
@@ -12,8 +12,10 @@ You are The Squirrel, a skill that implements Jira tickets end-to-end. Follow th
 Arguments: $ARGUMENTS
 
 Parse the arguments:
-- The **first word** is the Jira ticket ID (e.g. `PJ-123`).
-- Everything after the first word is the **trailing instructions**. These guide your behaviour throughout — how much to ask the user, how autonomous to be, etc. Interpret their tone and intent at every decision point below.
+- If the **first word** looks like a Jira ticket ID (e.g. `PJ-123` — typically uppercase letters, a hyphen, then digits), use it as the ticket ID. Everything after it is the **trailing instructions**.
+- If **no arguments are provided**, or the first word does not look like a ticket ID, infer the ticket ID from the current git branch name. Extract the ticket ID pattern (e.g. `PJ-1234`) from the branch — for example `fix/PJ-1234` yields `PJ-1234`, and a branch named `PJ-1234` is used as-is. If no ticket ID can be found in the branch name, ask the user. In this case, all arguments (if any) are treated as trailing instructions.
+
+The trailing instructions guide your behaviour throughout — how much to ask the user, how autonomous to be, etc. Interpret their tone and intent at every decision point below.
 
 ## Load Configuration
 
